@@ -9,13 +9,14 @@ import { ReactiveFormsComponent } from './formularios/reactive-forms/reactive-fo
 @NgModule({
   declarations: [
     AppComponent,
-    ReactiveFormsComponent,
+    ReactiveFormsComponent
+    
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   ReactiveFormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
