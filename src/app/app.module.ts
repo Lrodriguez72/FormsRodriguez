@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ReactiveFormsComponent } from './formularios/reactive-forms/reactive-forms.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { ReactiveFormsModule } from './formularios/reactive-forms/reactive-forms.module';
+
+import { FormErrorHelperComponent } from './shared/components/form-error-helper/form-error-helper.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReactiveFormsComponent
-    
-   
+ 
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    //AppRoutingModule,
     ReactiveFormsModule
   ],
   providers: [],
