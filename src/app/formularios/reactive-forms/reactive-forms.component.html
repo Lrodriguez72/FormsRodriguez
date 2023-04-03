@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-8">
     <h1>Alumno</h1>
+    
     <form
       (ngSubmit)="onSubmit()"
       [formGroup]="registerForm"
       autocomplete="off"
       class="row g-3"
     >
-      <!--  -------------------NOMBRE--------------------------  -->
+     
       <div class="col-md-6">
         <label for="inputNombre" class="form-label">Nombre</label>
         <input
@@ -23,24 +24,7 @@
           *ngIf="nombreControl.invalid && nombreControl.touched"
           [formErrors]="nombreControl.errors" > 
         </app-form-error-helper>
-
-        <div
-          *ngIf="
-            nombreControl.hasError('required') &&
-            nombreControl.invalid &&
-            nombreControl.touched
-          "
-          class="invalid-feedback"
-        >
-          Este campo es inválido.
-        </div>
-
-        <div *ngIf="nombreControl.hasError('nombre')" class="invalid-feedback">
-          El nombre debe tener más de 3 caracteres.
-        </div>
-      </div>
-      <!--invalid-feedback es una clase de Bootstrap-->
-      <!--  -------------------NOMBRE  finnnnn--------------------------  -->
+      
 
       <div class="col-md-6">
         <label for="inputApellido" class="form-label">Apellido</label>
@@ -50,24 +34,12 @@
           class="form-control"
           id="inputApellido"
         />
-        <div class="form-text">Máximo 30 caracteres.</div>
-        <div
-          *ngIf="apellidoControl.hasError('required')"
-          &&
-          apellidoControl.touched
-          class="invalid-feedback"
-        >
-          Este campo es inválido.
-        </div>
-        <div
-          *ngIf="apellidoControl.hasError('apellido')"
-          &&
-          apellidoControl.touched
-          class="invalid-feedback"
-        >
-          El apellido debe tener un máximo de 30 caracteres.
-        </div>
-      </div>
+        
+      <app-form-error-helper
+      *ngIf="apellidoControl.invalid && apellidoControl.touched"
+      [formErrors]="apellidoControl.errors" > 
+    </app-form-error-helper>
+
 
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
@@ -78,18 +50,13 @@
           class="form-control"
           id="inputEmail4"
         />
-        <div *ngIf="emailControl.hasError('required')" class="invalid-feedback">
-          Este campo es inválido.
-        </div>
-        <div *ngIf="emailControl.hasError('email')" class="invalid-feedback">
-          No es un email válido.
-        </div>
-      </div>
 
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" />
-      </div>
+        <app-form-error-helper
+        *ngIf="emailControl.invalid && emailControl.touched"
+        [formErrors]="emailControl.errors" > 
+      </app-form-error-helper>
+
+      
       <div class="col-12">
         <label for="inputAddress" class="form-label">Dirección</label>
         <input type="text" class="form-control" id="inputAddress" />
@@ -139,15 +106,13 @@
         <input type="text" class="form-control" id="inputZip" />
       </div>
 
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" />
-          <label class="form-check-label" for="gridCheck"> Validar </label>
-        </div>
-      </div>
+      
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Enviar</button>
       </div>
+   
+
     </form>
   </div>
+
 </div>
