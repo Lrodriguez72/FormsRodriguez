@@ -7,10 +7,7 @@
       <small class="text-danger" *ngSwitchCase="'minlength'">
         Debe tener al menos {{ error.value['requiredLength'] }} caracteres
       </small>
-      <small class="text-danger" *ngSwitchCase="'noHomero'">
-        No se admiten homeros
-      </small>
-      <small class="text-danger" *ngSwitchCase="'email'">
+           <small class="text-danger" *ngSwitchCase="'email'">
         No es un email valido
       </small>
       <small  class="text-danger" *ngSwitchDefault>Error desconocido</small>

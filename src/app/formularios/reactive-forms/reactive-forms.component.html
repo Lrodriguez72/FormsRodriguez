@@ -13,13 +13,16 @@
         <input
           [formControl]="nombreControl"
           type="text"
-          [ngClass]="{
-            'is-invalid': nombreControl.invalid && nombreControl.touched
-          }"
+          [class.is-invalid]="
+          nombreControl.invalid && nombreControl.touched
+          "
           class="form-control"
           id="inputNombre"
         />
-        <div class="form-text">Mínimo de 3 caracteres.</div>
+        <app-form-error-helper
+          *ngIf="nombreControl.invalid && nombreControl.touched"
+          [formErrors]="nombreControl.errors" > 
+        </app-form-error-helper>
 
         <div
           *ngIf="

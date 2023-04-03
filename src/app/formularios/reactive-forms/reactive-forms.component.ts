@@ -11,7 +11,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 })
 
 
-export class ReactiveFormsComponent {
+export class MyReactiveFormsComponent {
 
  // cada control tiene su constructor y así se puede acceder a él en forma directa
 // el primer argumento es el valor por defecto, el segundo es un arreglo de validaciones:

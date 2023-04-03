@@ -7,18 +7,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { ReactiveFormsModule } from './formularios/reactive-forms/reactive-forms.module';
 
 import { FormErrorHelperComponent } from './shared/components/form-error-helper/form-error-helper.component';
+import { MyReactiveFormsComponent } from './formularios/reactive-forms/reactive-forms.component';
+import { FormErrorHelperModule } from './shared/components/form-error-helper/form-error-helper.module';
+import { MyReactiveFormsModule } from './formularios/reactive-forms/reactive-forms.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
- 
-  
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MyReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
