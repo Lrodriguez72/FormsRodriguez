@@ -13,15 +13,20 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 
 export class MyReactiveFormsComponent {
 
- // cada control tiene su constructor y así se puede acceder a él en forma directa
-// el primer argumento es el valor por defecto, el segundo es un arreglo de validaciones:
-  emailControl = new FormControl(
+ 
+  private _emailControl = new FormControl(
     '',
     [
       Validators.required,
       Validators.email,
     ]
   );
+  public get emailControl() {
+    return this._emailControl;
+  }
+  public set emailControl(value) {
+    this._emailControl = value;
+  }
 
   nombreControl = new FormControl(
     '',

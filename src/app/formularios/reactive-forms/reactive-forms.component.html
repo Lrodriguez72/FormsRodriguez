@@ -24,7 +24,7 @@
           *ngIf="nombreControl.invalid && nombreControl.touched"
           [formErrors]="nombreControl.errors" > 
         </app-form-error-helper>
-      
+  </div>    
 
       <div class="col-md-6">
         <label for="inputApellido" class="form-label">Apellido</label>
@@ -39,7 +39,7 @@
       *ngIf="apellidoControl.invalid && apellidoControl.touched"
       [formErrors]="apellidoControl.errors" > 
     </app-form-error-helper>
-
+  </div> 
 
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
@@ -56,7 +56,7 @@
         [formErrors]="emailControl.errors" > 
       </app-form-error-helper>
 
-      
+    </div>    
       <div class="col-12">
         <label for="inputAddress" class="form-label">Dirección</label>
         <input type="text" class="form-control" id="inputAddress" />

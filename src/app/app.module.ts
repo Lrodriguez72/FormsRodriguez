@@ -18,7 +18,7 @@ import { MyReactiveFormsModule } from './formularios/reactive-forms/reactive-for
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    //ReactiveFormsModule,
     MyReactiveFormsModule
   ],
   providers: [],
