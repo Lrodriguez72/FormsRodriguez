@@ -54,9 +54,9 @@ export class MyReactiveFormsComponent {
       email:this.emailControl,
 
       localizacion: this.formBuilder.group({
-        ciudad: [''],
-        direccion_1: [''],
-        provincia: [''],
+        ciudad: ['',[Validators.required]],
+        direccion_1: ['',{validators: [Validators.required]}],
+        provincia: ['',Validators.minLength(3)],
         zip: [''],
       }),
   })

@@ -1,30 +1,28 @@
 <div class="row">
   <div class="col-8">
     <h1>Alumno</h1>
-    
+
     <form
       (ngSubmit)="onSubmit()"
       [formGroup]="registerForm"
       autocomplete="off"
       class="row g-3"
     >
-     
       <div class="col-md-6">
         <label for="inputNombre" class="form-label">Nombre</label>
         <input
           [formControl]="nombreControl"
           type="text"
-          [class.is-invalid]="
-          nombreControl.invalid && nombreControl.touched
-          "
+          [class.is-invalid]="nombreControl.invalid && nombreControl.touched"
           class="form-control"
           id="inputNombre"
         />
         <app-form-error-helper
           *ngIf="nombreControl.invalid && nombreControl.touched"
-          [formErrors]="nombreControl.errors" > 
+          [formErrors]="nombreControl.errors"
+        >
         </app-form-error-helper>
-  </div>    
+      </div>
 
       <div class="col-md-6">
         <label for="inputApellido" class="form-label">Apellido</label>
@@ -34,29 +32,30 @@
           class="form-control"
           id="inputApellido"
         />
-        
-      <app-form-error-helper
-      *ngIf="apellidoControl.invalid && apellidoControl.touched"
-      [formErrors]="apellidoControl.errors" > 
-    </app-form-error-helper>
-  </div> 
+
+        <app-form-error-helper
+          *ngIf="apellidoControl.invalid && apellidoControl.touched"
+          [formErrors]="apellidoControl.errors"
+        >
+        </app-form-error-helper>
+      </div>
 
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
         <input
           [formControl]="emailControl"
           type="email"
-          [ngClass]="{ 'is-invalid': emailControl.invalid }"
+          
           class="form-control"
           id="inputEmail4"
         />
 
         <app-form-error-helper
-        *ngIf="emailControl.invalid && emailControl.touched"
-        [formErrors]="emailControl.errors" > 
-      </app-form-error-helper>
-
-    </div>    
+          *ngIf="emailControl.invalid && emailControl.touched"
+          [formErrors]="emailControl.errors"
+        >
+        </app-form-error-helper>
+      </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Dirección</label>
         <input type="text" class="form-control" id="inputAddress" />
@@ -106,13 +105,9 @@
         <input type="text" class="form-control" id="inputZip" />
       </div>
 
-      
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Enviar</button>
       </div>
-   
-
     </form>
   </div>
-
 </div>
