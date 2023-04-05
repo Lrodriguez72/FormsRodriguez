@@ -3,7 +3,7 @@
     <h1>Alumno</h1>
 
     <form
-      (ngSubmit)="onSubmit()"
+      (ngSubmit)="onSubmit($event)"
       [formGroup]="registerForm"
       autocomplete="off"
       class="row g-3"
@@ -56,19 +56,30 @@
         >
         </app-form-error-helper>
       </div>
+
       <div class="col-12">
         <label for="inputAddress" class="form-label">Dirección</label>
-        <input type="text" class="form-control" id="inputAddress" />
+        <input type="text" class="form-control" id="inputAddress" [formControl]="direccionControl"/>
+
+        <app-form-error-helper
+        *ngIf="direccionControl.invalid && direccionControl.touched"
+        [formErrors]="direccionControl.errors">
+        </app-form-error-helper>
       </div>
 
       <div class="col-md-6">
         <label for="inputCity" class="form-label">Ciudad</label>
-        <input type="text" class="form-control" id="inputCity" />
+        <input type="text" class="form-control" id="inputCity" [formControl]="ciudadControl"/>
+
+        <app-form-error-helper
+        *ngIf="ciudadControl.invalid && ciudadControl.touched"
+        [formErrors]="ciudadControl.errors">
+        </app-form-error-helper>
       </div>
 
       <div class="col-md-4">
         <label for="inputState" class="form-label">Provincia</label>
-        <select id="inputState" class="form-select">
+        <select id="inputState" class="form-select" [formControl]="ProvinciaControl" >
           <option selected>Seleccione...</option>
           <option value="Buenos Aires">Buenos Aires</option>
           <option value="Ciudad Autónoma de Buenos Aires">
@@ -98,15 +109,24 @@
           </option>
           <option value="Tucumán">Tucumán</option>
         </select>
+        <app-form-error-helper
+        *ngIf="ProvinciaControl.invalid && ProvinciaControl.touched"
+        [formErrors]="ProvinciaControl.errors">
+        </app-form-error-helper>
       </div>
 
       <div class="col-md-2">
         <label for="inputZip" class="form-label">Código Postal</label>
-        <input type="text" class="form-control" id="inputZip" />
+        <input type="text" class="form-control" id="inputZip"  [formControl]="zipControl" />
+        <app-form-error-helper
+        *ngIf="zipControl.invalid && zipControl.touched"
+        [formErrors]="zipControl.errors">
+        </app-form-error-helper>
+
       </div>
 
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Enviar</button>
       </div>
     </form>
   </div>

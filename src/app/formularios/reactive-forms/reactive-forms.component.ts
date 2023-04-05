@@ -42,6 +42,16 @@ export class MyReactiveFormsComponent {
   ]
   );
 
+  ciudadControl = new FormControl('', Validators.required);
+
+  direccionControl = new FormControl('', Validators.required);
+
+ProvinciaControl = new FormControl('', Validators.required);
+
+zipControl = new FormControl('', Validators.required);
+
+
+
   registerForm: FormGroup;
 
 
@@ -53,12 +63,12 @@ export class MyReactiveFormsComponent {
       apellido:this.apellidoControl,
       email:this.emailControl,
 
-      localizacion: this.formBuilder.group({
-        ciudad: ['',[Validators.required]],
-        direccion_1: ['',{validators: [Validators.required]}],
-        provincia: ['',Validators.minLength(3)],
-        zip: [''],
-      }),
+     
+        ciudad: this.ciudadControl,
+        direccion_1: this.direccionControl,
+        provincia: this.ProvinciaControl,
+        zip: this.zipControl
+      
   })
 
 }
@@ -66,12 +76,15 @@ export class MyReactiveFormsComponent {
 
 
 
-onSubmit():void {
+onSubmit(e: Event):void {
+  e.preventDefault();
+
   if (this.registerForm.valid) {
     // si un control no es válido, el form no lo es
     console.log(this.registerForm.value);
+    // COMPLETAR CON LISTADO
   } else {
-    alert('El formulario no es válido');
+    return alert('El formulario no es válido');
   }
 }
 }
